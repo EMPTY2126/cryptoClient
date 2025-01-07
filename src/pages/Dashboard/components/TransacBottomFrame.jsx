@@ -27,24 +27,25 @@ const CatSelButton = styled(Button)(({ theme }) => ({
 
 
 function createData(
-    name: tring,
-    date: string,
-    invoice: string,
-    amount: number,
-    status: number,
-    action: string,
-  ) {
-    if(status===1){
-        status = 'Receive';
-    }
-    else if(status===0){
-        status = 'Transfer';
-    }
-    else if(status === -1){
-        status = "Sent"
-    }
-    return { name, date, invoice, amount, status, action };
+  name,
+  date,
+  invoice,
+  amount,
+  status,
+  action
+) {
+  let statusLabel;
+  if (status === 1) {
+    statusLabel = 'Receive';
+  } else if (status === 0) {
+    statusLabel = 'Transfer';
+  } else if (status === -1) {
+    statusLabel = 'Sent';
   }
+  return { name, date, invoice, amount, status: statusLabel, action };
+}
+
+
   
   const rows = [
     createData('John Doe', '21-March-2025','OP01212278' , 640, 0,"details"),

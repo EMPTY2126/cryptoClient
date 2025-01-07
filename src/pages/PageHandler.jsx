@@ -29,6 +29,7 @@ function PageHandler() {
       <Route  path="/dashboard" element={isAuth ? <Dashboard /> : <LoginPage /> } />
       <Route path="/deposit" element={isAuth ? <Deposit /> : <LoginPage />} />
       <Route path="/paymentstatus/:merchenttransactionId" element={isAuth ? <PaymentStatus /> : <LoginPage />} />
+      <Route path="/transaction" element={isAuth ? <Transaction /> : <LoginPage />} />
     </Routes>
   );
 }
